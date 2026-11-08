@@ -339,16 +339,16 @@ main:focus { outline: none; }
   .hero__in { grid-template-columns: 1.1fr 0.9fr; align-items: center; padding-block: 5rem 7rem; max-width: 70rem; margin-inline: auto; }
   .stack { width: min(100%, 27.5rem); }
   .event { padding-block: 7.5rem; }
-  .event__grid { grid-template-columns: 1fr 1fr; align-items: center; gap: 0; }
-  .event__detail { border-left: 1px solid var(--yellow); padding-left: 3rem; }
-  .event__title { padding-right: 3rem; }
+  .event__grid { grid-template-columns: 1fr 1fr; align-items: center; gap: 0; max-width: 54rem; }
+  .event__detail { border-left: 1px solid var(--yellow); padding: 0.5rem 0 0.5rem 3rem; text-align: left; }
+  .event__title { justify-self: stretch; padding-right: 3rem; text-align: right; }
   .event__actions { flex-direction: row; justify-content: center; align-items: flex-start; }
-  .event__detail, .event--day .event__actions { justify-self: stretch; }
-  .event--day .event__title { grid-row: 1 / span 2; }
-  .event--day .event__actions { grid-column: 2; margin-top: 0; padding: 2rem 0 0 3rem; border-left: 1px solid var(--yellow); }
-  .event--night .event__actions { grid-column: 1 / -1; margin-top: 3rem; }
-  .sheet { padding: 6rem 5rem; }
-  .sheet__pair { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .event__detail { justify-self: stretch; }
+  .event__actions { grid-column: 1 / -1; margin-top: 3rem; }
+  .sheet { --corner: clamp(8rem, 13vw, 10.5rem); max-width: 58rem; padding: 5.5rem 4rem; }
+  .sheet__pair { grid-template-columns: 1fr 1fr; gap: 0; margin-top: 2.75rem; }
+  .fam { padding-inline: 1.5rem; }
+  .fam + .fam { border-left: 1px solid var(--yellow); }
   .keep { grid-template-columns: 0.8fr 1.2fr; align-items: center; padding-inline: max(var(--gutter), calc(50% - 33rem)); }
 }
 
