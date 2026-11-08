@@ -1,0 +1,28 @@
+---
+import { calendarTitle } from '../data/wedding';
+const { event: e, lead } = Astro.props;
+const google = `https://calendar.google.com/calendar/render?${new URLSearchParams({
+  action: 'TEMPLATE', text: calendarTitle(e.title), dates: `${e.startUtc}/${e.endUtc}`, location: e.mapLocation, ctz: 'Asia/Kolkata',
+})}`;
+---
+<div class="event__grid">
+  <div class="event__title">
+    <h2 class="script wipe">{lead && <span class="event__lead">{lead}</span>}{e.title}</h2>
+  </div>
+  <div class="event__detail reveal">
+    <p class="event__date">{e.date}</p>
+    <p class="event__time">{e.time}</p>
+    <p class="event__venue">{e.venue}</p>
+    <p class="event__place">{e.place}</p>
+  </div>
+  <div class="event__actions reveal">
+    <a class="btn btn--solid" href={e.mapUrl} target="_blank" rel="noopener">Get directions</a>
+    <details class="cal">
+      <summary class="btn btn--line">Add to calendar</summary>
+      <div class="cal__menu">
+        <a href={google} target="_blank" rel="noopener">Google Calendar</a>
+        <a href={`/calendar/${e.id}.ics`} download={`${e.id}.ics`}>Apple or Outlook</a>
+      </div>
+    </details>
+  </div>
+</div>

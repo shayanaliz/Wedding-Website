@@ -1,0 +1,321 @@
+---
+import { Image, getImage } from 'astro:assets';
+import '../styles/site.css';
+import Corners from '../components/Corners.astro';
+import EventBlock from '../components/EventBlock.astro';
+import { events, families, siblings, music } from '../data/wedding';
+import portrait from '../assets/portrait.jpg';
+import invite from '../assets/invite.png';
+import pattern from '../assets/pattern.png';
+import stagePhoto from '../imgs/camelot-1.jpg';
+import waterPhoto from '../imgs/alappuzha-1.webp';
+import receptionPhoto from '../imgs/walk-avenue.jpg';
+import monogramRaw from '../assets/monogram.svg?raw';
+
+const lattice = await getImage({ src: pattern, format: 'webp', quality: 85 });
+const monogram = monogramRaw
+  .replace(/<\?xml.*?\?>/s, '')
+  .replace(/<defs>.*?<\/defs>/s, '')
+  .replace(/<svg /, '<svg class="mono" role="img" aria-label="AS monogram" ')
+  .replaceAll('<path ', '<path pathLength="1" ');
+
+const title = 'Adhil & Sona · 20 & 21 December 2026';
+const description = 'Together with our families, we invite you to our wedding in Alapuzzha and reception in Kochi.';
+const og = new URL('/og.jpg', Astro.site).href;
+const inviteAlt = 'The wedding invitation of Adhil Naufal and Sona Haris, with both events, framed in pink, yellow and dark blue flowers.';
+const [wedding, reception] = events;
+---
+<!doctype html>
+<html lang="en" style={`--pattern:url(${lattice.src})`}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#FFFBEE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={og} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/vienna-romance.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/baskerville.woff2" as="font" type="font/woff2" crossorigin />
+    <script is:inline>
+      (function (d) {
+        d.classList.add('js');
+        var seen = false;
+        try { seen = sessionStorage.getItem('opened') === '1'; } catch (e) {}
+        if (seen || location.hash) d.classList.add('no-gate');
+      })(document.documentElement);
+    </script>
+  </head>
+  <body>
+    <div class="gate" id="gate">
+      <div class="door door--left"><div class="door__frame"><Corners only="left" /></div></div>
+      <div class="door door--right"><div class="door__frame"><Corners only="right" /></div></div>
+      <img class="gate__crown" src="/art/crown.svg" alt="" width="577" height="319" />
+      <div class="gate__content">
+        <Fragment set:html={monogram} />
+        <p class="gate__names"><span>Adhil</span><i>&amp;</i><span>Sona</span></p>
+        <p class="gate__date">20 &amp; 21 December 2026</p>
+        <button class="btn btn--solid" id="open" type="button">Open our invitation</button>
+      </div>
+    </div>
+
+    <header class="bar">
+      <a class="bar__mark" href="#top" aria-label="Back to the top"><img src="/favicon.svg" alt="" width="171" height="101" /></a>
+      <nav aria-label="Sections">
+        <a href="#wedding">Wedding</a>
+        <a href="#reception">Reception</a>
+        <a class="bar__extra" href="#invitation">Invitation</a>
+      </nav>
+      <details class="go" id="go">
+        <summary>Get directions</summary>
+        <div class="go__menu">
+          {events.map((e) => (
+            <a href={e.mapUrl} target="_blank" rel="noopener"><b>{e.title}</b><span>{e.place}</span></a>
+          ))}
+        </div>
+      </details>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="hero lattice">
+        <div class="hero__frame" aria-hidden="true">
+          <Corners />
+          <img class="hero__crown" src="/art/crown.svg" alt="" width="577" height="319" />
+        </div>
+        <div class="hero__in">
+        <div class="hero__words">
+          <img class="hero__bismillah" src="/art/bismillah.svg" width="888" height="265" alt="In the name of God, the Most Gracious, the Most Merciful" />
+          <p class="caps hero__together">Together with our families,</p>
+          <h1 class="hero__names">
+            <span class="script">Adhil</span>
+            <span class="amp">&amp;</span>
+            <span class="script">Sona</span>
+          </h1>
+          <p class="hero__invite">cordially invite you to join the auspicious occasions</p>
+          <div class="when">
+            <p class="when__row">
+              <span class="when__days">Sunday<br />&amp; Monday</span>
+              <b>20<i>&amp;</i>21</b>
+              <span class="when__month">December<br />2026</span>
+            </p>
+            <p class="when__events">
+              <a href="#wedding">Sun {wedding.time} · Alapuzzha</a>
+              <span class="when__sep" aria-hidden="true"></span>
+              <a href="#reception">Mon {reception.time} · Kochi</a>
+            </p>
+          </div>
+        </div>
+        <div class="stack" data-drift="24">
+          <div class="print">
+            <Image src={portrait} alt="Adhil and Sona standing close together on a waterfront at night, city lights on the water behind them." widths={[480, 800, 1100]} sizes="(min-width: 860px) 440px, 82vw" format="webp" quality={80} loading="eager" />
+          </div>
+          <button class="tucked" type="button" data-invite aria-label="View the invitation">
+            <Image src={invite} alt="" widths={[360, 640]} sizes="240px" format="webp" quality={82} />
+          </button>
+        </div>
+        </div>
+      </section>
+
+      <section class="bridge lattice" aria-label="The two celebrations">
+        <p>A wedding in Alapuzzha, followed by a reception in Kochi.</p>
+      </section>
+
+      <section class="event event--day lattice" id="wedding">
+        <img class="event__leaves" src="/art/leaves.svg" alt="" width="293" height="1003" />
+        <EventBlock event={wedding} />
+      </section>
+
+      <section class="families lattice" aria-labelledby="families-title">
+        <div class="sheet reveal">
+          <Corners />
+          <img class="sheet__crown" src="/art/crown.svg" alt="" width="577" height="319" />
+          <h2 class="script" id="families-title">Our families</h2>
+          <div class="sheet__pair">
+            {families.map((f) => (
+              <div class="fam">
+                <h3 class="script">{f.name}</h3>
+                <p><i>{f.childOf}</i><span>{f.parents}</span></p>
+                <p><i>{f.grandchildOf}</i><span>{f.grandparents}</span></p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="event event--night" id="reception">
+        <Image class="bg-photo" src={receptionPhoto} alt="" widths={[800, 1400, 1900]} sizes="100vw" format="webp" quality={60} />
+        <img class="event__crown" src="/art/crown.svg" alt="" width="577" height="319" />
+        <EventBlock event={reception} lead="Followed by" />
+        <div class="count" id="count" hidden>
+          <h3 class="count__label" id="count-label">Until the wedding</h3>
+          <dl class="count__cells" id="count-cells">
+            <div><dt>Days</dt><dd id="c-d">0</dd></div>
+            <div><dt>Hours</dt><dd id="c-h">00</dd></div>
+            <div><dt>Minutes</dt><dd id="c-m">00</dd></div>
+            <div><dt>Seconds</dt><dd id="c-s">00</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="keep" id="invitation">
+        <Image class="bg-photo" src={stagePhoto} alt="" widths={[800, 1400, 1900]} sizes="100vw" format="webp" quality={60} />
+        <img class="keep__leaves" src="/art/leaves.svg" alt="" width="293" height="1003" />
+        <div class="keep__words">
+          <h2 class="script wipe">The invitation</h2>
+          <p>Tap the card to see it in full.</p>
+          <button class="btn btn--deep" type="button" data-invite>View the invitation</button>
+        </div>
+        <button class="keep__card" type="button" data-invite aria-label="View the invitation" data-drift="14">
+          <Image src={invite} alt={inviteAlt} widths={[480, 800, 1100]} sizes="(min-width: 860px) 620px, 90vw" format="webp" quality={82} />
+        </button>
+      </section>
+    </main>
+
+    <footer class="close">
+      <div class="close__sky" aria-hidden="true">
+        <Image class="bg-photo" src={waterPhoto} alt="" widths={[800, 1400, 1900]} sizes="100vw" format="webp" quality={60} />
+      </div>
+      <img class="close__crown" src="/art/crown.svg" alt="" width="577" height="319" />
+      <p class="close__joy">Your presence and blessings are our greatest joy.</p>
+      <p class="script close__names"><span>Adhil</span><i>&amp;</i><span>Sona</span></p>
+      <p class="close__regards">With warm regards,</p>
+      <p class="close__siblings">{siblings}</p>
+    </footer>
+
+    <dialog class="light" id="light" aria-label="The invitation">
+      <button class="light__close" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg>
+      </button>
+      <Image src={invite} alt={inviteAlt} widths={[800, 1400, 1706]} sizes="96vw" format="webp" quality={88} loading="lazy" />
+    </dialog>
+
+    {music && (
+      <>
+        <audio id="music" src={music} loop preload="none" />
+        <button class="sound" id="sound" type="button" aria-pressed="true" aria-label="Music" hidden>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12" /><circle cx="6.5" cy="18" r="2.5" /><circle cx="16.5" cy="16" r="2.5" /><path class="sound__off" d="M3 3l18 18" /></svg>
+        </button>
+      </>
+    )}
+
+    <script>
+      import { events } from '../data/wedding';
+
+      const root = document.documentElement;
+      const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const $ = (id: string) => document.getElementById(id);
+
+      /* Opening doors */
+      const gate = $('gate');
+      const audio = $('music') as HTMLAudioElement | null;
+      const sound = $('sound');
+      const behindGate = [...document.querySelectorAll<HTMLElement>('.bar, main, .close')];
+      if (!root.classList.contains('no-gate')) behindGate.forEach((el) => (el.inert = true));
+      const finish = () => {
+        gate?.remove();
+        root.classList.add('no-gate');
+        behindGate.forEach((el) => (el.inert = false));
+        ($('top') as HTMLElement).focus({ preventScroll: true });
+      };
+      $('open')?.addEventListener('click', () => {
+        try { sessionStorage.setItem('opened', '1'); } catch {}
+        if (audio && sound) { audio.play().catch(() => {}); sound.hidden = false; }
+        if (still) return finish();
+        gate?.classList.add('is-open');
+        setTimeout(finish, 1250);
+      });
+      if (audio && sound) {
+        const sync = () => sound.setAttribute('aria-pressed', String(!audio.paused));
+        audio.volume = 0.6;
+        audio.addEventListener('play', sync);
+        audio.addEventListener('pause', sync);
+        sound.addEventListener('click', () => { audio.paused ? audio.play().catch(() => {}) : audio.pause(); });
+        /* Guests who skip the opening can still start the music themselves */
+        if (root.classList.contains('no-gate')) { sound.hidden = false; sync(); }
+      }
+
+      /* Directions menu closes on an outside tap or Escape */
+      const go = $('go') as HTMLDetailsElement;
+      document.addEventListener('click', (e) => { if (go.open && !go.contains(e.target as Node)) go.open = false; });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') go.open = false; });
+
+      /* Invitation lightbox */
+      const light = $('light') as HTMLDialogElement;
+      document.querySelectorAll('[data-invite]').forEach((b) => b.addEventListener('click', () => light.showModal()));
+      light.addEventListener('click', (e) => {
+        if (e.target === light || (e.target as Element).closest('.light__close')) light.close();
+      });
+
+      /* Countdown: to the wedding, then the reception, then a thank you */
+      const count = $('count')!;
+      const label = $('count-label')!;
+      const cells = $('count-cells')!;
+      const pad = (n: number) => String(n).padStart(2, '0');
+      const targets = events.map((e) => ({ name: e.title.toLowerCase(), at: Date.parse(e.startIso) }));
+      let timer = 0;
+      const tick = () => {
+        const now = Date.now();
+        const next = targets.find((t) => t.at > now);
+        if (!next) {
+          label.textContent = 'Thank you for celebrating with us.';
+          cells.hidden = true;
+          clearInterval(timer);
+          return;
+        }
+        label.textContent = `Until the ${next.name}`;
+        const s = Math.floor((next.at - now) / 1000);
+        $('c-d')!.textContent = String(Math.floor(s / 86400));
+        $('c-h')!.textContent = pad(Math.floor(s / 3600) % 24);
+        $('c-m')!.textContent = pad(Math.floor(s / 60) % 60);
+        $('c-s')!.textContent = pad(s % 60);
+      };
+      timer = window.setInterval(tick, 1000);
+      tick();
+      count.hidden = false;
+
+      /* Hero photo tilts toward the pointer, on devices that can hover */
+      const stack = document.querySelector<HTMLElement>('.stack');
+      if (stack && !still && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        stack.addEventListener('pointermove', (e) => {
+          const r = stack.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          stack.style.transform = `perspective(1000px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg)`;
+        });
+        stack.addEventListener('pointerleave', () => { stack.style.transform = ''; });
+      }
+
+      /* Scroll: headings write on, details settle, photos drift */
+      if (!still && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((list) => {
+          list.forEach((en) => {
+            if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        root.classList.add('motion');
+        document.querySelectorAll('.wipe, .reveal').forEach((el) => io.observe(el));
+
+        const drifters = [...document.querySelectorAll<HTMLElement>('[data-drift]')];
+        let queued = false;
+        const drift = () => {
+          queued = false;
+          const vh = innerHeight;
+          drifters.forEach((el) => {
+            const r = el.parentElement!.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > vh) return;
+            const p = (r.top + r.height / 2 - vh / 2) / vh;
+            el.style.translate = `0 ${(p * Number(el.dataset.drift)).toFixed(1)}px`;
+          });
+        };
+        addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(drift); } }, { passive: true });
+        drift();
+      }
+    </script>
+  </body>
+</html>

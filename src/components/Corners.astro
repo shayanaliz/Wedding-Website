@@ -1,0 +1,6 @@
+---
+// The invitation's four flower corners. `only` limits it to one side, for the opening doors.
+const { only } = Astro.props as { only?: 'left' | 'right' };
+---
+{only !== 'right' && <><span class="corner corner--tl" aria-hidden="true" /><span class="corner corner--bl" aria-hidden="true" /></>}
+{only !== 'left' && <><span class="corner corner--tr" aria-hidden="true" /><span class="corner corner--br" aria-hidden="true" /></>}

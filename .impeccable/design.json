@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T14:39:04.000Z",
+  "title": "Design System: Adhil & Sona",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "Invitation Dark Blue",
+        "canonical": "#4b5b65",
+        "tonalRamp": [
+          "#040c12",
+          "#1a262d",
+          "#34424b",
+          "#50606a",
+          "#718089",
+          "#93a1a9",
+          "#bdc9d1",
+          "#e6f0f7"
+        ]
+      },
+      "pink": {
+        "role": "secondary",
+        "displayName": "Invitation Pink",
+        "canonical": "#df617e",
+        "tonalRamp": [
+          "#240005",
+          "#49011a",
+          "#701b33",
+          "#99364f",
+          "#c4506c",
+          "#ec718c",
+          "#ffa1b6",
+          "#ffcedf"
+        ]
+      },
+      "yellow": {
+        "role": "tertiary",
+        "displayName": "Invitation Yellow",
+        "canonical": "#f4bd8d",
+        "tonalRamp": [
+          "#150700",
+          "#331f0c",
+          "#533922",
+          "#765639",
+          "#9b7452",
+          "#c2946b",
+          "#f1bb8b",
+          "#ffe3b8"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Card Cream",
+        "canonical": "#fffbee",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252421",
+          "#41403b",
+          "#5f5e58",
+          "#7f7d76",
+          "#a19e95",
+          "#cbc7bd",
+          "#f2eee2"
+        ]
+      },
+      "blue-deep": {
+        "role": "neutral",
+        "displayName": "Deep Ink Blue",
+        "canonical": "#2f3b43",
+        "tonalRamp": [
+          "#050c12",
+          "#1b262c",
+          "#36424a",
+          "#545f67",
+          "#747f86",
+          "#96a0a6",
+          "#c0c9ce",
+          "#e9f0f4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The couple's names alone in the hero."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Event names."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Script section headings."
+      },
+      "name": {
+        "displayName": "Name",
+        "purpose": "A person's name inside a framed sheet and on the opening card."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Event time, in the roman serif."
+      },
+      "figure-small": {
+        "displayName": "Figure Small",
+        "purpose": "The numerals in the hero's date row."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "A single italic sentence on a colour field."
+      },
+      "venue": {
+        "displayName": "Venue",
+        "purpose": "Venue names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text and family details, regular or italic."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase event dates and the date on the opening card."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "All button text, uppercase."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Uppercase links in the sticky bar."
+      },
+      "label-small": {
+        "displayName": "Label Small",
+        "purpose": "Uppercase opening line, date-row words and links, and countdown units; the smallest type in the system."
+      }
+    },
+    "shadows": [
+      {
+        "name": "print",
+        "value": "0 1.5rem 2.75rem -1rem color-mix(in srgb, #2f3b43 55%, transparent)",
+        "purpose": "The mounted portrait photograph."
+      },
+      {
+        "name": "tucked-card",
+        "value": "0 1rem 1.75rem -0.5rem color-mix(in srgb, #2f3b43 50%, transparent)",
+        "purpose": "The small invitation tucked against the portrait."
+      },
+      {
+        "name": "keepsake-card",
+        "value": "0 1.75rem 3rem -1.25rem color-mix(in srgb, #2f3b43 60%, transparent)",
+        "purpose": "The full invitation on the yellow field."
+      }
+    ],
+    "motion": [
+      {
+        "name": "expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The single easing for doors, hover states, reveals and wipes."
+      },
+      {
+        "name": "state",
+        "value": "0.25s",
+        "purpose": "Button colour changes."
+      },
+      {
+        "name": "paper",
+        "value": "0.5s",
+        "purpose": "Prints levelling on hover; the lightbox lifting in."
+      },
+      {
+        "name": "tilt",
+        "value": "0.6s",
+        "purpose": "The hero's stack settling back after leaning toward the pointer."
+      },
+      {
+        "name": "reveal",
+        "value": "0.9s",
+        "purpose": "Details rising 18px and fading in."
+      },
+      {
+        "name": "doors",
+        "value": "1.15s",
+        "purpose": "The two halves of the card parting."
+      },
+      {
+        "name": "wipe",
+        "value": "1.2s",
+        "purpose": "Script headings written on left to right."
+      },
+      {
+        "name": "trace",
+        "value": "1.7s cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "The monogram tracing itself on the opening card."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "374px"
+      },
+      {
+        "name": "date-row",
+        "value": "560px"
+      },
+      {
+        "name": "wide",
+        "value": "860px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "The primary action on cream: open the invitation, get directions.",
+      "html": "<button class=\"ds-btn-solid\">Get directions</button>",
+      "css": ".ds-btn-solid{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0.5rem 1.5rem;font:400 0.6875rem/1.75 'Libre Baskerville', Georgia, serif;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color 0.25s cubic-bezier(0.16,1,0.3,1),color 0.25s cubic-bezier(0.16,1,0.3,1),border-color 0.25s cubic-bezier(0.16,1,0.3,1);background:var(--blue,#4b5b65);color:var(--cream,#fffbee);border:1px solid var(--blue,#4b5b65);}.ds-btn-solid:hover{background:var(--blue-deep,#2f3b43);border-color:var(--blue-deep,#2f3b43);}.ds-btn-solid:focus-visible{outline:2px solid currentColor;outline-offset:3px;}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "The secondary action, paired with a solid button.",
+      "html": "<button class=\"ds-btn-line\">Add to calendar</button>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0.5rem 1.5rem;font:400 0.6875rem/1.75 'Libre Baskerville', Georgia, serif;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color 0.25s cubic-bezier(0.16,1,0.3,1),color 0.25s cubic-bezier(0.16,1,0.3,1),border-color 0.25s cubic-bezier(0.16,1,0.3,1);background:none;color:var(--blue,#4b5b65);border:1px solid var(--blue,#4b5b65);}.ds-btn-line:hover{background:var(--blue,#4b5b65);color:var(--cream,#fffbee);}.ds-btn-line:focus-visible{outline:2px solid currentColor;outline-offset:3px;}"
+    },
+    {
+      "name": "Deep Button",
+      "kind": "button",
+      "refersTo": "button-deep",
+      "description": "The action on the yellow field, where dark blue would be too light.",
+      "html": "<button class=\"ds-btn-deep\">View the invitation</button>",
+      "css": ".ds-btn-deep{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0.5rem 1.5rem;font:400 0.6875rem/1.75 'Libre Baskerville', Georgia, serif;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color 0.25s cubic-bezier(0.16,1,0.3,1),color 0.25s cubic-bezier(0.16,1,0.3,1),border-color 0.25s cubic-bezier(0.16,1,0.3,1);background:var(--blue-deep,#2f3b43);color:var(--cream,#fffbee);border:0;}.ds-btn-deep:hover{background:var(--blue,#4b5b65);}.ds-btn-deep:focus-visible{outline:2px solid currentColor;outline-offset:3px;}"
+    },
+    {
+      "name": "Solid Button on Dark Blue",
+      "kind": "button",
+      "refersTo": "button-solid-night",
+      "description": "The primary action on the dark blue field; turns yellow on hover.",
+      "html": "<div class=\"ds-night\"><button class=\"ds-btn-night\">Get directions</button></div>",
+      "css": ".ds-night{display:inline-block;padding:1.5rem;background:var(--blue,#4b5b65);}.ds-btn-night{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0.5rem 1.5rem;font:400 0.6875rem/1.75 'Libre Baskerville', Georgia, serif;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color 0.25s cubic-bezier(0.16,1,0.3,1),color 0.25s cubic-bezier(0.16,1,0.3,1),border-color 0.25s cubic-bezier(0.16,1,0.3,1);background:var(--cream,#fffbee);color:var(--blue,#4b5b65);border:1px solid var(--cream,#fffbee);}.ds-btn-night:hover{background:var(--yellow,#f4bd8d);border-color:var(--yellow,#f4bd8d);color:var(--blue-deep,#2f3b43);}.ds-btn-night:focus-visible{outline:2px solid currentColor;outline-offset:3px;}"
+    },
+    {
+      "name": "Sticky Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Cream bar with the monogram and three tracked section links.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-bar-mark\" href=\"#\">AS</a><nav class=\"ds-bar-nav\"><a href=\"#\">Wedding</a><a href=\"#\">Reception</a><a href=\"#\">Invitation</a></nav></header>",
+      "css": ".ds-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.75rem;padding-inline:clamp(1rem,5vw,4rem);background:var(--cream,#fffbee);border-bottom:1px solid color-mix(in srgb,var(--blue,#4b5b65) 22%,transparent);color:var(--blue,#4b5b65);font-family:'Libre Baskerville', Georgia, serif;}.ds-bar-mark{font-family:'Vienna Romance', 'Libre Baskerville', serif;font-size:1.75rem;color:var(--pink,#df617e);text-decoration:none;}.ds-bar-nav{display:flex;}.ds-bar-nav a{display:inline-flex;align-items:center;min-height:2.75rem;padding-inline:0.5rem;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;color:inherit;}.ds-bar-nav a:hover{text-decoration:underline;color:var(--blue-deep,#2f3b43);}.ds-bar-nav a:focus-visible{outline:2px solid currentColor;outline-offset:3px;}"
+    },
+    {
+      "name": "Rule Frame with Flower Corners",
+      "kind": "card",
+      "description": "The signature frame: dark blue rule, flower corners landing on the line, cream ground.",
+      "html": "<div class=\"ds-sheet\"><span class=\"ds-c ds-tl\"></span><span class=\"ds-c ds-tr\"></span><span class=\"ds-c ds-bl\"></span><span class=\"ds-c ds-br\"></span><h2 class=\"ds-sheet-title\">Our families</h2><p class=\"ds-sheet-body\">PK Naufal &amp; Asiya Naufal</p></div>",
+      "css": ".ds-sheet{--corner:clamp(5.75rem,25vw,13rem);position:relative;max-width:42rem;padding:6.5rem 1.5rem 7rem;text-align:center;background:var(--cream,#fffbee);color:var(--blue,#4b5b65);border:max(1.5px,calc(var(--corner) * 0.009)) solid var(--blue,#4b5b65);font-family:'Libre Baskerville', Georgia, serif;}.ds-c{position:absolute;width:var(--corner);pointer-events:none;background:url('/art/border.svg') no-repeat left top / 100% auto;}.ds-tl,.ds-tr{top:calc(var(--corner) * -0.033);aspect-ratio:182 / 253;}.ds-bl,.ds-br{bottom:calc(var(--corner) * -0.008);aspect-ratio:182 / 198;background-position:left bottom;}.ds-tl,.ds-bl{left:calc(var(--corner) * -0.03);}.ds-tr,.ds-br{right:calc(var(--corner) * -0.03);transform:scaleX(-1);}.ds-sheet-title{margin:0;font-family:'Vienna Romance', 'Libre Baskerville', serif;font-weight:400;font-size:clamp(2.25rem,10vw,3.25rem);line-height:1.2;color:var(--pink,#df617e);-webkit-text-stroke:0.012em currentColor;}.ds-sheet-body{margin:0.75rem 0 0;line-height:1.6;}"
+    },
+    {
+      "name": "Date Row",
+      "kind": "custom",
+      "description": "The hero's dates between dark blue hairlines, with the event links beneath.",
+      "html": "<div class=\"ds-when\"><p class=\"ds-when-row\"><span class=\"ds-when-days\">Sunday<br>&amp; Monday</span><b>20<i>&amp;</i>21</b><span class=\"ds-when-month\">December<br>2026</span></p><p class=\"ds-when-events\"><a href=\"#\">Sun 12:00 PM · Alapuzzha</a><span class=\"ds-when-sep\" aria-hidden=\"true\"></span><a href=\"#\">Mon 6:00 PM · Kochi</a></p></div>",
+      "css": ".ds-when{max-width:27rem;text-align:center;color:var(--blue,#4b5b65);font-family:'Libre Baskerville', Georgia, serif;}.ds-when-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0.75rem;margin:0;padding-block:0.75rem;border-block:1px solid color-mix(in srgb,var(--blue,#4b5b65) 28%,transparent);font-size:0.625rem;line-height:1.6;letter-spacing:0.16em;text-transform:uppercase;}.ds-when-days{text-align:right;}.ds-when-month{text-align:left;}.ds-when-row b{font-weight:400;font-size:clamp(1.75rem,8vw,2.25rem);line-height:1.1;letter-spacing:0;white-space:nowrap;}.ds-when-row i{font-size:0.45em;margin-inline:0.3em;}.ds-when-events{display:flex;justify-content:center;align-items:center;gap:1rem;margin:0;padding-top:0.25rem;}.ds-when-events a{display:inline-flex;align-items:center;min-height:2.75rem;font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;color:inherit;text-underline-offset:0.25em;text-decoration-thickness:1px;}.ds-when-events a:focus-visible{outline:2px solid currentColor;outline-offset:3px;}.ds-when-sep{width:0.3125rem;height:0.3125rem;transform:rotate(45deg);background:var(--pink,#df617e);}"
+    },
+    {
+      "name": "Countdown",
+      "kind": "custom",
+      "description": "Four tabular numerals with caps units, on the dark blue field.",
+      "html": "<div class=\"ds-count\"><p class=\"ds-count-l\">Until the wedding</p><dl class=\"ds-count-c\"><div><dt>Days</dt><dd>41</dd></div><div><dt>Hours</dt><dd>16</dd></div><div><dt>Minutes</dt><dd>20</dd></div><div><dt>Seconds</dt><dd>28</dd></div></dl></div>",
+      "css": ".ds-count{max-width:26rem;padding:2.5rem 1rem;background:var(--blue,#4b5b65);color:var(--cream,#fffbee);text-align:center;font-family:'Libre Baskerville', Georgia, serif;}.ds-count-l{margin:0;font-style:italic;font-size:0.9375rem;}.ds-count-c{display:grid;grid-template-columns:repeat(4,1fr);margin:1.25rem 0 0;}.ds-count-c div{display:flex;flex-direction:column-reverse;}.ds-count-c dd{margin:0;font-size:clamp(1.5rem,7vw,2.25rem);line-height:1.35;font-variant-numeric:tabular-nums lining-nums;}.ds-count-c dt{font-size:0.625rem;letter-spacing:0.16em;text-transform:uppercase;}"
+    },
+    {
+      "name": "Icon Control",
+      "kind": "button",
+      "refersTo": "icon-control",
+      "description": "The only round element: a 3rem icon-only control, as in the lightbox close.",
+      "html": "<button class=\"ds-icon\" aria-label=\"Close\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M5 5l14 14M19 5L5 19\"/></svg></button>",
+      "css": ".ds-icon{width:3rem;height:3rem;display:grid;place-items:center;border:0;border-radius:50%;background:var(--cream,#fffbee);color:var(--blue,#4b5b65);cursor:pointer;}.ds-icon:focus-visible{outline:2px solid currentColor;outline-offset:3px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Invitation, Opened Out",
+    "overview": "The site is the couple's printed invitation unfolded into one long sheet. Everything it is made of comes from that card: the four-colour palette, the mandala lattice, the flower corners and crown, the dark blue rule, the formal script for the names and the bookish serif for everything else. It is warm, ceremonial and unhurried, with the composure of stationery rather than the density of an interface.\n\nCream paper carries the framed moments. Between them, whole fields of pink, dark blue and yellow arrive edge to edge, so colour reads as a change of sheet instead of an accent. Facts stay plain and softly sized: a date, a time and a venue are set like the lines of a card, with their actions directly beneath. The whole type scale sits small for a softer, more elegant feel.\n\nMotion behaves like the object it describes. The monogram traces itself, the card parts like two doors, script headings wipe on as if written, the prints drift slightly with the scroll, and the hero photograph leans toward the pointer. All of it falls away under reduced motion.",
+    "keyCharacteristics": [
+      "One palette of four invitation colours plus a single deepened blue for legibility.",
+      "Rule frames with the invitation's flower corners, scaled and positioned by one measure.",
+      "A mandala lattice at 12%, behind cream and pink only.",
+      "Vienna Romance for names and headings; Libre Baskerville in caps, italic and regular for the rest.",
+      "A small, soft type scale: body at 0.9375rem, the smallest type at 0.625rem.",
+      "Square paper, soft shadows only under objects that are physically paper."
+    ],
+    "rules": [
+      {
+        "name": "The Large Pink Rule",
+        "body": "Pink text stays at 24px (1.5rem) or larger, because of contrast (3.30:1 on cream, 2.06:1 on dark blue). Below that size pink is ornament only: the monogram, the flower art, the date row's diamond. In the build pink on dark blue appears only as ornament; at 2.06:1 it does not reach 3:1 even for large type, so treat ornament as its practical limit there.",
+        "section": "colors"
+      },
+      {
+        "name": "The Small Text Rule",
+        "body": "Small text is dark blue on cream, cream on dark blue, or Deep Ink Blue (#2f3b43) on yellow. Dark blue on yellow measures 4.19:1 and is why the deepened blue exists; Deep Ink Blue on yellow measures 6.85:1.",
+        "section": "colors"
+      },
+      {
+        "name": "The Large Field Text Rule",
+        "body": "Cream on pink (3.30:1) and yellow on dark blue (4.19:1) are for large type only: the bridge statement and the closing ampersand.",
+        "section": "colors"
+      },
+      {
+        "name": "The Whole Field Rule",
+        "body": "Colour arrives as whole full-bleed sections that meet on a hard edge. A section is cream, pink, dark blue or yellow, and its type follows the pairings above.",
+        "section": "colors"
+      },
+      {
+        "name": "The Twelve Percent Rule",
+        "body": "The lattice is `pattern.png` at 12% opacity, centred from the top and tiled at max(62rem, 100%) wide. It appears only behind cream or pink, never dark blue or yellow. It keeps its own pink and yellow on cream and is filtered to white on pink. Framed sheets sit on solid cream above it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Soft Scale Rule",
+        "body": "The whole scale stays small for a softer, more elegant feel, with body at 0.9375rem and nothing below 0.625rem. Hierarchy comes from the script and from a change of cut, not from sheer size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Script Is For Names Rule",
+        "body": "Vienna Romance sets names and headings only, with a hairline stroke of 0.012em in the text colour so its thin strokes hold on screen. Anything a guest must read to act is in Libre Baskerville.",
+        "section": "typography"
+      },
+      {
+        "name": "The Three Cuts Rule",
+        "body": "Libre Baskerville appears in regular, italic and uppercase with tracking, all at weight 400. Emphasis comes from size, italic or a change of field, not from bold.",
+        "section": "typography"
+      },
+      {
+        "name": "The Caps Carry Facts Rule",
+        "body": "Tracked capitals carry dates, event labels and the invitation's own words. They never become an invented label above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Logistics In Reach Rule",
+        "body": "Date, time, venue, directions and calendar sit together in one block, so nothing a guest needs is more than a tap away.",
+        "section": "layout"
+      },
+      {
+        "name": "The Paper Lifts Rule",
+        "body": "Only objects that would be physical paper carry a shadow, and only those objects tilt (between 1.5deg and 5deg, easing toward level on hover). The hero's stack of prints may also lean in perspective toward the pointer, up to 3.5deg on each axis. Fields, frames, sheets and buttons stay flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Landing Rule",
+        "body": "Flower corners use offsets proportional to the corner measure (top −0.033, bottom −0.008, sides −0.03) so the rule drawn in the artwork lands on the CSS frame line at every size. When a frame changes its corner measure, it inherits these ratios unchanged, and the frame's border thickness is derived from the same measure.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Small Crown Rule",
+        "body": "The crown is only ever small (3.5rem), whatever it heads. On the reception and footer, where no frame carries it, it sits centred on the seam with the section above.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do set small text as dark blue on cream, cream on dark blue, or Deep Ink Blue (#2f3b43) on yellow.",
+      "Do keep the lattice to `pattern.png` at 12%, behind cream or pink only, filtered white on pink.",
+      "Do position flower corners with offsets proportional to the corner measure, so the rule in the artwork lands on the CSS frame line.",
+      "Do derive frame border thickness from the same corner measure: max(1.5px, corner × 0.009).",
+      "Do give colour to whole sections and let them meet on a hard edge.",
+      "Do keep the crown at 3.5rem, and centre it on the seam where no frame carries it.",
+      "Do keep touch targets at 2.75rem or larger and retain the 2px current-colour focus outline.",
+      "Do make every motion optional under reduced motion, leaving the page fully readable, and keep the hero's pointer tilt to hover-capable devices."
+    ],
+    "donts": [
+      "Don't set pink text below 24px, or use pink for text on dark blue; below that size it is ornament only.",
+      "Don't set small text in dark blue directly on yellow; use Deep Ink Blue.",
+      "Don't set the lattice outside the invitation's 10% to 15% range.",
+      "Don't put the lattice behind dark blue or yellow.",
+      "Don't enlarge the crown past 3.5rem.",
+      "Don't position a flower corner with fixed offsets, or change its aspect ratio without redrawing the offsets.",
+      "Don't set Vienna Romance for dates, times, venues or actions.",
+      "Don't use bold; Libre Baskerville stays at weight 400.",
+      "Don't add a small capitalised label above a heading unless it is the invitation's own wording.",
+      "Don't add shadow or tilt to fields, frames, sheets or buttons.",
+      "Don't round frames, buttons or photographs; the circle is reserved for icon-only controls."
+    ]
+  }
+}
