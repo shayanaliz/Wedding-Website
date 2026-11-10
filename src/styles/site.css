@@ -215,18 +215,13 @@ main:focus { outline: none; }
   .when__sep { display: block; }
 }
 
-.stack { position: relative; width: min(82vw, 25rem); margin-bottom: 2.5rem; transform: perspective(1000px) rotateX(0deg) rotateY(0deg); transform-style: preserve-3d; transition: transform 0.6s var(--expo); }
-.print {
-  background: var(--cream); padding: 0.625rem; border: 1px solid var(--blue); rotate: 1.75deg;
-  box-shadow: 0 1.5rem 2.75rem -1rem color-mix(in srgb, var(--blue-deep) 55%, transparent);
-}
-.print img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 92%; }
+.stack { position: relative; width: min(80vw, 22rem); transform: perspective(1000px) rotateX(0deg) rotateY(0deg); transform-style: preserve-3d; transition: transform 0.6s var(--expo); }
 .tucked {
-  position: absolute; left: -5%; bottom: -2.5rem; width: 54%; rotate: -5deg; translate: 0 0 28px;
+  display: block; width: 100%; rotate: -2deg;
   box-shadow: 0 1rem 1.75rem -0.5rem color-mix(in srgb, var(--blue-deep) 50%, transparent);
   transition: rotate 0.5s var(--expo), scale 0.5s var(--expo);
 }
-.tucked:hover { rotate: -2deg; scale: 1.03; }
+.tucked:hover { rotate: 0deg; }
 
 /* Bridge */
 .bridge { background: var(--pink); color: var(--cream); padding: 4rem var(--gutter); text-align: center; }
@@ -337,7 +332,7 @@ main:focus { outline: none; }
   .go { justify-self: end; }
   .go summary { font-size: 0.6875rem; letter-spacing: 0.18em; }
   .hero__in { grid-template-columns: 1.1fr 0.9fr; align-items: center; padding-block: 5rem 7rem; max-width: 70rem; margin-inline: auto; }
-  .stack { width: min(100%, 27.5rem); }
+  .stack { width: min(100%, 25rem); }
   .event { padding-block: 7.5rem; }
   .event__grid { grid-template-columns: 1fr 1fr; align-items: center; gap: 0; max-width: 54rem; }
   .event__detail { border-left: 1px solid var(--yellow); padding: 0.5rem 0 0.5rem 3rem; text-align: left; }

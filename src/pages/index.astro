@@ -4,8 +4,8 @@ import '../styles/site.css';
 import Corners from '../components/Corners.astro';
 import EventBlock from '../components/EventBlock.astro';
 import { events, families, siblings, music } from '../data/wedding';
-import portrait from '../assets/portrait.jpg';
 import invite from '../assets/invite.png';
+import saveTheDate from '../assets/Save the Date Card@2x.png';
 import pattern from '../assets/pattern.png';
 import stagePhoto from '../imgs/camelot-1.jpg';
 import waterPhoto from '../imgs/alappuzha-1.webp';
@@ -112,12 +112,9 @@ const [wedding, reception] = events;
           </div>
         </div>
         <div class="stack" data-drift="24">
-          <div class="print">
-            <Image src={portrait} alt="Adhil and Sona standing close together on a waterfront at night, city lights on the water behind them." widths={[480, 800, 1100]} sizes="(min-width: 860px) 440px, 82vw" format="webp" quality={80} loading="eager" />
+          <div class="tucked">
+            <Image src={saveTheDate} alt="Save the date card for Sunday 20 and Monday 21 December, with the neighbouring days greyed out." widths={[400, 700, 1000]} sizes="(min-width: 860px) 400px, 80vw" format="webp" quality={82} loading="eager" />
           </div>
-          <button class="tucked" type="button" data-invite aria-label="View the invitation">
-            <Image src={invite} alt="" widths={[360, 640]} sizes="240px" format="webp" quality={82} />
-          </button>
         </div>
         </div>
       </section>
